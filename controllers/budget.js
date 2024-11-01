@@ -58,7 +58,7 @@ router.get("/:budgetId", verifyToken, async (req, res) => {
         const { budgetId } = req.params;
 
         // Validate budget ID
-        if (!mongoose.Types.ObjectId.isValid(budgetId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(budgetId)) {
             return res.status(400).json({ error: "Invalid budget ID" });
         }
 
@@ -81,7 +81,7 @@ router.put("/:budgetId", verifyToken, async (req, res) => {
         const { name, target, category, startDate, endDate } = req.body;
 
         // Validate budget ID
-        if (!mongoose.Types.ObjectId.isValid(budgetId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(budgetId)) {
             return res.status(400).json({ error: "Invalid budget ID" });
         }
 
@@ -121,7 +121,7 @@ router.delete("/:budgetId", verifyToken, async (req, res) => {
         const { budgetId } = req.params;
 
         // Validate budget ID
-        if (!mongoose.Types.ObjectId.isValid(budgetId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(budgetId)) {
             return res.status(400).json({ error: "Invalid budget ID" });
         }
 
