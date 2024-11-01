@@ -73,7 +73,7 @@ router.get("/:transactionId", verifyToken, async (req, res) => {
 
         const { transactionId } = req.params;
          // Validate transaction ID
-        if (!mongoose.Types.ObjectId.isValid(transactionId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(transactionId)) {
             return res.status(400).json({ error: "Invalid transaction ID" });
         }
 
@@ -103,7 +103,7 @@ router.put("/:transactionId", verifyToken, async (req, res) => {
         const { name, amount, category, type } = req.body;
 
         // Validate transaction ID
-        if (!mongoose.Types.ObjectId.isValid(transactionId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(transactionId)) {
             return res.status(400).json({ error: "Invalid transaction ID" });
         }
 
@@ -151,7 +151,7 @@ router.delete("/:transactionId", verifyToken, async (req, res) => {
         const { transactionId } = req.params;
 
         // Validate transaction ID
-        if (!mongoose.Types.ObjectId.isValid(transactionId)) {
+        if (!mongoose.Schema.Types.ObjectId.isValid(transactionId)) {
             return res.status(400).json({ error: "Invalid transaction ID" });
         }
 
