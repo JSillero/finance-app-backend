@@ -20,7 +20,7 @@ const port = 3000
 
 
 // ! -- Middleware
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({ origin: 'https://finance-app-vault.netlify.app/dashboard' }))
 app.use(express.json());
 app.use(morgan('dev'));
 
